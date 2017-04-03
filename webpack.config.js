@@ -1,20 +1,13 @@
-const path = require('path')
-const webpack = require('webpack')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-
-var outputPath = path.resolve(__dirname, 'dist')
-var sourcePath = path.resolve(__dirname, 'app')
-var isProduction = process.env.NODE_ENV === 'production'
+var path = require('path')
+var webpack = require('webpack')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  devtool: isProduction ? 'source-map' : 'eval',
+  devtool: process.env.NODE_ENV ? 'source-map' : 'eval',
   cache: true,
-  entry: {
-    'vendor': ['angular', 'angular-route', 'angular-mocks'],
-    'app': path.join(sourcePath, 'app.js')
-  },
+  entry: './app/app.js',
   output: {
-    path: outputPath,
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js'
@@ -30,16 +23,16 @@ module.exports = {
     }]
   },
   resolve: {
-    root: [sourcePath],
     modules: [
       'node_modules',
-      sourcePath
+       path.resolve(__dirname, "app")
     ]
   },
   devServer: {
-    progress: true,
-    contentBase: outputPath,
-    outputPath: outputPath
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true, 
+    historyApiFallback: true, 
+    //hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
@@ -47,7 +40,7 @@ module.exports = {
       minChunks: Infinity
     }),
     new CopyWebpackPlugin([{
-      context: sourcePath,
+      context: path.resolve(__dirname, 'app'),
       from: '**/*.{html,css}'
     }]),
     new webpack.NoErrorsPlugin()

@@ -33,7 +33,7 @@
     "parser": "babel-eslint"
   },
   "devDependencies": {
-    "angular-mocks": "^1.5.7",
+    "angular-mocks": "^1.5.11",
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
@@ -47,11 +47,11 @@
     "karma-webpack": "^1.7.0",
     "protractor": "^4.0.0",
     "standard": "^7.1.2",
-    "webpack": "^2.1.0-beta.19",
-    "webpack-dev-server": "^2.1.0-beta.0"
+    "webpack": "^2.3.0",
+    "webpack-dev-server": "^2.4.0"
   },
   "dependencies": {
-    "angular": "^1.5.7",
-    "angular-route": "^1.5.7"
+    "angular": "^1.5.11",
+    "angular-route": "^1.5.11"
   }
 }
