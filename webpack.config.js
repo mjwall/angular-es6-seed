@@ -13,19 +13,24 @@ module.exports = {
     chunkFilename: '[id].chunk.js'
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      loader: 'babel',
-      query: {
-        presets: ['es2015']
-      }
+    rules: [{
+
+      use: [
+         {
+           test: /\.js$/,
+           exclude: /(node_modules)/,
+           loader: "babel-loader",
+           options: {
+               presets: ["es2015"]
+           } 
+         }
+    ]
     }]
   },
   resolve: {
     modules: [
-      'node_modules',
-       path.resolve(__dirname, "app")
+       path.resolve(__dirname, "app"),
+      'node_modules'
     ]
   },
   devServer: {
