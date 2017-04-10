@@ -4,7 +4,6 @@ import {
   View1Controller
 } from './view1-controller'
 
-
 export default angular
   .module('myApp.view1', [
     ngRoute

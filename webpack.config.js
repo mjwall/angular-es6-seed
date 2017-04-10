@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path')
+var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = function (env) {
   return {
@@ -19,7 +19,7 @@ module.exports = function (env) {
       rules: [{
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
+          fallback: 'style-loader',
           use: 'css-loader'
         })
       }, {
@@ -27,7 +27,7 @@ module.exports = function (env) {
         loader: 'file-loader',
         options: {
           outputPath: '',
-          name: "[path][name].[ext]"
+          name: '[path][name].[ext]'
         }
       }, {
         test: /\.html$/,
@@ -46,7 +46,7 @@ module.exports = function (env) {
             plugins: ['syntax-dynamic-import']
           }
         }]
-      }],
+      }]
     },
     plugins: [
       new ExtractTextPlugin('app.css'),
@@ -55,7 +55,7 @@ module.exports = function (env) {
         // assumes your vendor imports exist in the node_modules directory
         name: 'vendor',
         minChunks: function (module) {
-          return module.context && module.context.indexOf('node_modules') !== -1;
+          return module.context && module.context.indexOf('node_modules') !== -1
         }
       }),
       new webpack.optimize.CommonsChunkPlugin({
