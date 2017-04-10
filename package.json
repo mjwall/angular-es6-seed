@@ -50,8 +50,8 @@
     "protractor": "^4.0.0",
     "rimraf": "^2.6.1",
     "standard": "^7.1.2",
-    "webpack": "^2.3.0",
-    "webpack-dev-server": "^2.4.0"
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
     "angular": "^1.5.11",
