@@ -1,5 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (env) {
@@ -17,7 +18,9 @@ module.exports = function (env) {
     module: {
       rules: [{
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ExtractTextPlugin.extract({
+          use: 'css-loader'
+        })
       }, {
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
@@ -58,6 +61,7 @@ module.exports = function (env) {
         // If there are no common modules vendor and app, manifest will only have runtime code
         name: 'manifest'
       }),
+      new ExtractTextPlugin('app.css'),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'index-template.html'
