@@ -16,7 +16,10 @@ module.exports = function (env) {
     },
     module: {
       rules: [{
-        test: /\.(css|png|jpg|gif)$/,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }, {
+        test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
           outputPath: '',
