@@ -6,8 +6,8 @@
     "build": "rimraf dist && NODE_ENV=production webpack --progress",
     "server": "webpack-dev-server --port 3000 --content-base dist --open",
     "start": "npm run server",
-    "watch": "TODO: npm run build -- --watch",
-    "test": "TODO: karma start karma.conf.js",
+    "watch": "npm run build -- --watch",
+    "test": "karma start karma.conf.js",
     "update-webdriver": "TODO: webdriver-manager update",
     "preprotractor": "TODO: npm run update-webdriver",
     "protractor": "TODO: protractor e2e-tests/protractor.conf.js"
