@@ -46,7 +46,7 @@
     "karma-chrome-launcher": "^1.0.1",
     "karma-firefox-launcher": "^1.0.0",
     "karma-jasmine": "^1.0.2",
-    "karma-webpack": "^1.7.0",
+    "karma-webpack": "^1.8.1",
     "protractor": "^4.0.0",
     "rimraf": "^2.6.1",
     "webpack": "^2.3.3",
