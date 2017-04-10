@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Mon Apr 10 2017 16:30:39 GMT-0400 (EDT)
+var path = require('path');
 
 module.exports = function (config) {
   config.set({
@@ -13,13 +14,9 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
 
 
-    // list of files / patterns to load in the browser
     files: [
-      'app/app.js',
-      '**/*-test.js'
+      'karma.shim.js'
     ],
-
-
     // list of files to exclude
     exclude: [],
 
@@ -27,8 +24,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      ['./app/app.js']: ['webpack'],
-      ['./app/**/*-test.js']: ['webpack']
+      'karma.shim.js': ['webpack']
     },
 
     webpackPreprocessor: {
@@ -61,7 +57,6 @@ module.exports = function (config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
-
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

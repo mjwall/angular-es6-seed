@@ -1,5 +1,8 @@
 /* eslint-env jasmine */
-import { module, inject } from 'mocks'
+import {
+  module,
+  inject
+} from '../../mocks'
 import versionDirective from './version-directive'
 
 describe('myApp.version module', () => {

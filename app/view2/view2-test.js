@@ -1,6 +1,11 @@
 /* eslint-env jasmine */
-import {module, inject} from 'mocks'
-import {View2Controller} from './view2-controller'
+import {
+  module,
+  inject
+} from '../../app/mocks.js'
+import {
+  View2Controller
+} from './view2-controller'
 import view2 from './view2'
 
 describe('myApp.view2 module', () => {

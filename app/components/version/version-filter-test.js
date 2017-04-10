@@ -1,5 +1,8 @@
 /* eslint-env jasmine */
-import { module, inject } from 'mocks'
+import {
+  module,
+  inject
+} from '../../mocks'
 import versionFilter from './version-filter'
 
 describe('myApp.version module', () => {

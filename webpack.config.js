@@ -19,6 +19,7 @@ module.exports = function (env) {
       rules: [{
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
           use: 'css-loader'
         })
       }, {
@@ -48,6 +49,7 @@ module.exports = function (env) {
       }],
     },
     plugins: [
+      new ExtractTextPlugin('app.css'),
       new webpack.optimize.CommonsChunkPlugin({
         // split up your app code from the libraries, must match entry name
         // assumes your vendor imports exist in the node_modules directory
@@ -61,7 +63,6 @@ module.exports = function (env) {
         // If there are no common modules vendor and app, manifest will only have runtime code
         name: 'manifest'
       }),
-      new ExtractTextPlugin('app.css'),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'index-template.html'
