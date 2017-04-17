@@ -23,6 +23,10 @@
       "error",
       "always"
     ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
     "no-const-assign": "error",
     "no-this-before-super": "error",
     "no-undef": "error",

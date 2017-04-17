@@ -7,9 +7,9 @@
     "server": "webpack-dev-server --port 3000 --content-base dist --open",
     "start": "npm run server",
     "watch": "npm run build -- --watch",
-    "format": "prettier-eslint --write \"app/**/*.js\"",
+    "format": "prettier-eslint --write \"**/*.js\"",
     "karma": "karma start karma.conf.js",
-    "test": "npm run karma",
+    "test": "npm run format && npm run karma",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js"
