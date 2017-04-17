@@ -1,11 +1,8 @@
 # angular-es6-seed
 
-[![Travis](https://img.shields.io/travis/willyelm/angular-es6-seed.svg?style=flat-square)](https://travis-ci.org/willyelm/angular-es6-seed)
-[![Standard](https://img.shields.io/badge/code%20style-standard-yellow.svg?style=flat-square)](http://standardjs.com/)
-[![license](https://img.shields.io/github/license/willyelm/angular-es6-seed.svg?style=flat-square)](https://github.com/willyelm/angular-es6-seed)
-
-
 Seed project for angular apps using ES6 and webpack bundler.
+
+Started with https://github.com/willyelm/angular-es6-seed, but then I rewrote the webpack packaging entirely and started adding features.
 
 This project was tested with the latest version 6.10.1 of nodeJS and 3.10.10 of npm, please make sure you have atleast  [node.js](https://nodejs.org/) 5+ and [NPM](https://www.npmjs.com/) 3+ installed.
 
