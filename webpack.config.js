@@ -18,37 +18,47 @@ module.exports = function (env) {
       publicPath: '/'
     },
     module: {
-      rules: [{
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      }, {
-        test: /\.(png|jpg|gif)$/,
-        loader: 'file-loader',
-        options: {
-          outputPath: '',
-          name: '[path][name].[ext]'
-        }
-      }, {
-        test: /\.html$/,
-        loader: 'html-loader'
-      }, {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: [{
-          loader: 'babel-loader',
+      rules: [
+        {
+          test: /\.css$/,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: 'css-loader'
+          })
+        },
+        {
+          test: /\.(png|jpg|gif)$/,
+          loader: 'file-loader',
           options: {
-            presets: [
-              ['es2015', {
-                modules: false
-              }]
-            ],
-            plugins: ['syntax-dynamic-import']
+            outputPath: '',
+            name: '[path][name].[ext]'
           }
-        }]
-      }]
+        },
+        {
+          test: /\.html$/,
+          loader: 'html-loader'
+        },
+        {
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  [
+                    'es2015',
+                    {
+                      modules: false
+                    }
+                  ]
+                ],
+                plugins: ['syntax-dynamic-import']
+              }
+            }
+          ]
+        }
+      ]
     },
     plugins: [
       new ExtractTextPlugin('app.css'),
@@ -57,7 +67,9 @@ module.exports = function (env) {
         // assumes your vendor imports exist in the node_modules directory
         name: 'vendor',
         minChunks: function (module) {
-          return module.context && module.context.indexOf('node_modules') !== -1
+          return (
+            module.context && module.context.indexOf('node_modules') !== -1
+          )
         }
       }),
       new webpack.optimize.CommonsChunkPlugin({
@@ -69,6 +81,10 @@ module.exports = function (env) {
         filename: 'index.html',
         favicon: 'favicon.ico',
         template: 'index-template.html'
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'home/home.html',
+        template: 'home/home.html'
       }),
       new HtmlWebpackPlugin({
         filename: 'view1/view1.html',
