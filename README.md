@@ -45,3 +45,8 @@ to start protractor, your app must be running.  Use 'npm start' then run:
 ```
 npm run protractor
 ```
+
+### TODO:
+Add bootstrap
+Add coverage
+e2e-test for home
