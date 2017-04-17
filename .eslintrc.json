@@ -7,18 +7,28 @@
     "node": true
   },
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "sourceType": "module"
   },
   "rules": {
-    "no-const-assign": "warn",
-    "no-this-before-super": "warn",
-    "no-undef": "warn",
-    "no-unreachable": "warn",
-    "no-unused-vars": "warn",
-    "constructor-super": "warn",
-    "valid-typeof": "warn"
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "no-tabs": "error",
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-const-assign": "error",
+    "no-this-before-super": "error",
+    "no-undef": "error",
+    "no-unreachable": "error",
+    "no-unused-vars": "error",
+    "constructor-super": "error",
+    "valid-typeof": "error"
   }
 }
