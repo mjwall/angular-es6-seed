@@ -1,4 +1,4 @@
 if (!window.angular.mock) {
-  require('angular-mocks')
+  require("angular-mocks");
 }
-module.exports = window.angular.mock
+module.exports = window.angular.mock;
