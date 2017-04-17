@@ -21,10 +21,7 @@ module.exports = function(env) {
       rules: [
         {
           test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: "css-loader"
-          })
+          loader: "style-loader!css-loader"
         },
         {
           test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,

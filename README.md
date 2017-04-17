@@ -47,6 +47,5 @@ npm run protractor
 ```
 
 ### TODO:
-Add bootstrap
 Add coverage
 e2e-test for home
