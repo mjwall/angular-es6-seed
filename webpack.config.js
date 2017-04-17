@@ -1,6 +1,5 @@
 var path = require("path");
 var webpack = require("webpack");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = function(env) {
@@ -74,7 +73,6 @@ module.exports = function(env) {
       ]
     },
     plugins: [
-      new ExtractTextPlugin("app.css"),
       new webpack.optimize.CommonsChunkPlugin({
         // split up your app code from the libraries, must match entry name
         // assumes your vendor imports exist in the node_modules directory
