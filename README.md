@@ -2,7 +2,7 @@
 
 Seed project for angular apps using ES6 and webpack bundler.
 
-Started with https://github.com/willyelm/angular-es6-seed, but then I rewrote the webpack packaging entirely and started adding features.
+Started with https://github.com/willyelm/angular-es6-seed, so thanks to Williams Medina.  I rewrote the entire webpack packaging and started adding features.
 
 This project was tested with the latest version 6.10.1 of nodeJS and 3.10.10 of npm, please make sure you have atleast  [node.js](https://nodejs.org/) 5+ and [NPM](https://www.npmjs.com/) 3+ installed.
 
